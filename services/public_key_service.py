@@ -29,12 +29,10 @@ class GetPublicKey(Resource):
             "responseMessage": "Approved",
             "responseCode": 0,
             "responseStatus": "Successful",
-            "applicationId": "<APPLICATION_ID>",
-            "UUID": "9abb80ac-2c07-4dfa-a572-00cd35a11761",
-            "pubKeyValue": "",
-            "tranDateTime": "040318135553"
+            "applicationId": args["applicationId"],
+            "UUID": args["UUID"],
+            "pubKeyValue": self.public,
+            "tranDateTime": dt.now().strftime("%d%m%y%H%M%S")
             }
-        response["applicationId"] = args["applicationId"]
-        response["pubKeyValue"] = self.public
-
+        
         return response
